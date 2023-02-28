@@ -109,7 +109,7 @@ class FlutterMicrosoftAuthenticationPlugin: MethodCallHandler {
 
   private fun createSingleAccountPublicClientApplication(assetPath: String) {
     val configFile = getConfigFile(assetPath)
-    val context: Context = mainActivity?.applicationContext
+    val context: Context = mainActivity.applicationContext
 
     PublicClientApplication.createSingleAccountPublicClientApplication(
             context,
