@@ -43,6 +43,8 @@ dependencies:
 - Make note of the MSAL Configuration
 
 2) Add BrowserTabActivity with RedirectUri to Android Manifest.xml
+- Signature Hash can be obtained from 'keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64'
+password: android
 ```xml
 <activity android:name="com.microsoft.identity.client.BrowserTabActivity">
     <intent-filter>
@@ -58,6 +60,7 @@ dependencies:
 ```
 
 3) Create Msal Configuration JSON file
+- redirect url is: "msauth://com.ricohspaces.app/<INSERT WEB ENCODED SIGNATURE HASH>"
 ```json
 {
   "client_id": "<client id>",
